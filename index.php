@@ -38,8 +38,8 @@ new_exercise(3);
 // === Exercise 3 ===
 // This should echo ` "Debugged !" `, fix it so that that is the literal text echo'ed
 
-$str = "Debugged !  Also very fun";
-echo substr($str, 0, 10);
+$str = '` "Debugged !" `  Also very fun';
+echo substr($str, 0, 16);
 
 new_exercise(4);
 // === Exercise 4 ===
@@ -47,8 +47,8 @@ new_exercise(4);
 // The print_r($week) should give:  Array ( [0] => mon [1] => tues [2] => wednes [3] => thurs [4] => fri [5] => satur [6] => sun )
 // Look up whats going wrong with this code, and then fix it, with ONE CHARACTER!
 
-foreach($week as $day) {
-    $day = substr($day, 0,  strlen($day)+3);
+foreach($week as &$day) {
+    $day = substr($day, 0,  strlen($day)-3);
 }
 
 print_r($week);
