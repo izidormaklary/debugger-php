@@ -86,18 +86,29 @@ function combineNames($str1 = "", $str2 = "") {
             $param = randomHeroName();
         }
     }
+    #implodes properties were put in wrong order
     return implode(" - ", $params);
 }
-
+# unneeded function deleted
 function randomHeroName()
 {
     $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
     $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
     $heroes = [$hero_firstnames, $hero_lastnames];
-    $randname = $heroes[rand(0,count($heroes)-1)][rand(0, 10)];
 
+    #array index was long
+    $randname = $heroes[rand(0,count($heroes)-1)][rand(0, 10)];
+#echo replaced with return
     return $randname;
 }
 
 echo "Here is the name: " . combineNames();
 
+
+
+new_exercise(7);
+function copyright($year) {
+    return "&copy; $year BeCode";
+}
+//print the copyright
+echo copyright(date('Y'));
